@@ -1,0 +1,48 @@
+<!-- 
+This code will be to page that appears when the Register menu item is chosen.
+
+This form will be absorbed by the controller  
+
+Authors: Rick Mercer and Hassanain Jamal
+-->
+
+
+<!--
+session_start (); // Need this in each file before $_SESSION['key'] is
+used. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rick Mercer's Quotation Service</title>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+<h3>Register</h3>
+<div class="LoginPage">
+    <form action="controller.php" method="post">
+        Username&nbsp; <input type="text" name="firstName"
+                              pattern=".{4,}" required> <br>
+        &nbsp;Password&nbsp; <input type="password" name="lastName"
+                                    pattern=".{6,}" required> <br> <br> <input
+            type="submit" value="Register">
+    </form>
+
+    <?php
+    session_start ();
+	if (isset($_SESSION ['wrong'])) {
+		echo $_SESSION ['wrong'];
+		$_SESSION ['wrong'] = '';
+		}?>
+
+</div>
+</body>
+<!--
+TODO: Style this with a border, rounded edges
+<p></p>
+TODO: Add a form to login
+<p></p>
+TDOO: use session_start (); and echo a message if the user name is
+already taken
+<p></p>
+Feel free to add a first and last name in addtion to the user name and
+password -->

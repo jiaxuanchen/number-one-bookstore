@@ -1,0 +1,44 @@
+<!-- 
+This code will be to page that appears when the Login menu item is chosen  
+
+This form will be absorbed by the controller using the form
+
+Authors: Rick Mercer and Hassanain Jamal
+-->
+<?php
+ session_start (); ?>
+
+
+<h3>Login</h3>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rick Mercer's Quotation Service</title>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+
+<!--
+TODO: Style this with a border, rounded edges
+ TODO: Add a form to login
+ TODO: Add client side validation to ensure text is in both
+input fields
+TODO: Add server side validation. Notfify if login failed,
+clear the input fields
+ TDOO: use session_start (); and echo a message if the login
+failed -->
+<div class="LoginPage">
+    <form action="controller.php" method="post">
+        Username&nbsp; <input type="text" name="user" pattern=".{4,}" required> <br>
+        &nbsp;Password&nbsp; <input type="password" name="number" pattern=".{6,}" required>
+        <br> <br> <input type="submit" value="Login">
+    </form>
+    <?php
+    session_start ();
+	if (isset($_SESSION ['wrong'])) {
+		echo $_SESSION ['wrong'];
+		$_SESSION ['wrong'] = '';
+		}?>
+</div>
+</body>
+</html>
